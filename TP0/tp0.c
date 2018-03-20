@@ -23,10 +23,7 @@ int maximo(int vector[], int n) {
 		
 		for (int i = 0; i < n; ++i)
 		{
-			if (vector[i] > vector[position])
-			{
-				position = i;
-			}
+			if (vector[i] > vector[position]) position = i;
 		}
 
 	return position;
@@ -40,9 +37,23 @@ int maximo(int vector[], int n) {
  * el primer elemento en el que difieren no existe o es menor.
  */
 int comparar(int vector1[], int n1, int vector2[], int n2) {
-	if (n1 < n2) return -1;
-	if (n1 == n2) return -1;
-	if(n1!=0 && n2==0) return 1;
+	
+	int maximo;
+	if (n1 > n2)
+	{
+		maximo = n2;
+	}else{
+		maximo = n1;
+	}
+
+	for (int i = 0; i < maximo; ++i)
+	{
+		if (vector1[i] > vector2[i]) return 1;
+		if (vector1[i] < vector2[i]) return -1;
+	}
+	
+	if(n1 < n2) return -1;
+	if(n1 > n2) return 1;
 	
 	return 0;
 }
@@ -51,4 +62,5 @@ int comparar(int vector1[], int n1, int vector2[], int n2) {
  * selección.
  */
 void seleccion(int vector[], int n) {
+	
 }
