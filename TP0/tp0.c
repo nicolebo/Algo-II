@@ -52,8 +52,8 @@ int comparar(int vector1[], int n1, int vector2[], int n2) {
 		if (vector1[i] < vector2[i]) return -1;
 	}
 	
-	if(n1 < n2) return -1;
-	if(n1 > n2) return 1;
+	if (n1 < n2) return -1;
+	if (n1 > n2) return 1;
 	
 	return 0;
 }
@@ -61,6 +61,10 @@ int comparar(int vector1[], int n1, int vector2[], int n2) {
 /* selection_sort() ordena el arreglo recibido mediante el algoritmo de
  * selección.
  */
-void seleccion(int vector[], int n) {
-	
+void seleccion(int vector[], int n) 
+{	while (n > 0)
+	{
+		int position = maximo(vector, n);
+		swap(&vector[position], &vector[n-=1]);
+	}
 }
