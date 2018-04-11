@@ -18,8 +18,8 @@ void prueba_apilar()
 {
     int variable = 1;
     pila_t* pila = pila_crear();
-    pila_apilar(pila, &variable);
-    print_test("Apilar un elemento", pila_esta_vacia(pila) ? false: true);
+    bool apilo = pila_apilar(pila, &variable);
+    print_test("Apilar un elemento", apilo);
     pila_destruir(pila);
 
 }

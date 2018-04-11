@@ -1,6 +1,6 @@
 #include "pila.h"
 #include <stdlib.h>
-#define CAPACIDAD 4;
+#define CAPACIDAD 4
 
 /* Definición del struct pila proporcionado por la cátedra.
  */
@@ -18,7 +18,12 @@ pila_t* pila_crear(void)
     if (pila == NULL) return NULL;
     pila->cantidad = 0;
     pila->capacidad = CAPACIDAD;
-    pila->datos = malloc(pila->cantidad * sizeof(void));
+    pila->datos = malloc(pila->capacidad * sizeof(void*));
+    if(pila->datos == NULL)
+    {
+        free(pila);
+        return NULL;
+    }
     return pila;
 }
 
@@ -26,7 +31,7 @@ pila_t* pila_crear(void)
 //Post: devuelve true si pudo cambiar el tamano sin errores
 bool cambiar_dimension(pila_t *pila, size_t tam)
 {
-    void *nuevos_datos = realloc(pila->datos, tam * sizeof(void));
+    void *nuevos_datos = realloc(pila->datos, tam * sizeof(void*));
     if (nuevos_datos == NULL) return false;
     pila->datos = nuevos_datos;
     pila->capacidad = tam;
@@ -41,7 +46,7 @@ void pila_destruir(pila_t *pila)
 
 bool pila_esta_vacia(const pila_t *pila)
 {
-    return pila->cantidad == 0 ? true : false;
+    return (pila->cantidad == 0);
 }
 
 // Agrega un nuevo elemento a la pila. Devuelve falso en caso de error.
@@ -49,13 +54,12 @@ bool pila_esta_vacia(const pila_t *pila)
 // Post: se agregó un nuevo elemento a la pila, valor es el nuevo tope.
 bool pila_apilar(pila_t *pila, void* valor)
 {
-    if (pila->capacidad > pila->cantidad)
+    if (pila->capacidad == pila->cantidad)
     {
-        if (!cambiar_dimension(pila, pila->capacidad * 2)) return false;
+        cambiar_dimension(pila, pila->capacidad * 2);
     }
-
     pila->datos[pila->cantidad] = valor;
-    pila->cantidad =+ 1;
+    pila->cantidad += 1;
     return true;
 
 }
@@ -80,11 +84,10 @@ void* pila_ver_tope(const pila_t *pila)
 void* pila_desapilar(pila_t *pila)
 {
     if (pila_esta_vacia(pila)) return NULL;
-    if (pila->cantidad <= pila->capacidad/4)
+    if (pila->cantidad == pila->capacidad/4 && pila->capacidad/2 > CAPACIDAD)
     {
-        if(!cambiar_dimension(pila, pila->capacidad/2)) return NULL;
+        cambiar_dimension(pila, pila->capacidad/2);
     }
-
     pila->cantidad -= 1;
     return pila->datos[pila->cantidad];
 }
