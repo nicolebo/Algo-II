@@ -82,10 +82,7 @@ void* cola_ver_primero(const cola_t *cola){
 // contiene un elemento menos, si la cola no estaba vacía.
 void* cola_desencolar(cola_t *cola){
     if (cola_esta_vacia(cola)) return NULL;
-    if(cola->primero ==  cola->ultimo)
-    {
-        cola->ultimo = NULL;
-    }
+    if(cola->primero ==  cola->ultimo) cola->ultimo = NULL;
     nodo_t* viejo_primero = cola->primero;
     void * dato = viejo_primero->dato;
     cola->primero = cola->primero->siguiente;
