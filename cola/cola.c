@@ -54,16 +54,12 @@ bool cola_encolar(cola_t *cola, void* valor){
     if(nuevo_nodo == NULL) return false;
     nuevo_nodo->dato = valor;
     nuevo_nodo->siguiente = NULL;
-    if (cola_esta_vacia(cola))
-    {
+    if (cola_esta_vacia(cola)) {
         cola->primero = nuevo_nodo;
-        cola->ultimo = nuevo_nodo;
-    }
-    else
-    {
+    } else {
         cola->ultimo->siguiente = nuevo_nodo;
-        cola->ultimo = nuevo_nodo;
     }
+    cola->ultimo = nuevo_nodo;
     return true;
 }
 
