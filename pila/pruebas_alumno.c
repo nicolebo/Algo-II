@@ -1,7 +1,7 @@
 #include "pila.h"
 #include "testing.h"
 #include <stddef.h>
-
+#define CANT_ELEMENTOS 10000
 
 /* ******************************************************************
  *                   PRUEBAS UNITARIAS ALUMNO
@@ -32,18 +32,25 @@ void prueba_desapilar()
     print_test("desapilar un elemento", pila_esta_vacia(pila) ? true : false);
     pila_destruir(pila);
 }
-void prueba_apilo_y_desapilo_x_elementos()
+void prueba_apilo_y_desapilo_x_elementos(int cantidad_elementos)
 {
-    int elementos = 100;
-    int variable = 87;
     pila_t* pila = pila_crear();
+    int array_posiciones[cantidad_elementos];
+    bool ok = true;
 
-    for (int i = 0; i < elementos; ++i) {
-        pila_apilar(pila, &variable);
+    for (int i = 0; i < cantidad_elementos; ++i) {
+        array_posiciones[i] = i;
     }
-    print_test("se apilaron correctacmente?", pila_esta_vacia(pila) ? false : true);
 
-    for (int j = 0; j < elementos; ++j) {
+    for (int i = 0; i < cantidad_elementos; ++i) {
+        ok = pila_apilar(pila, &array_posiciones[i]);
+    }
+
+    print_test("se apilaron correctacmente?", ok);
+
+    print_test("El tope es correcto?", pila_ver_tope(pila) == &array_posiciones[cantidad_elementos-1]);
+
+    for (int j = 0; j < cantidad_elementos; ++j) {
         pila_desapilar(pila);
     }
     print_test("se desapilaron correctacmente?", pila_esta_vacia(pila) ? true : false);
@@ -102,7 +109,7 @@ void pruebas_pila_alumno() {
     prueba_apilar();
     prueba_desapilar();
     prueba_apilo_elemento_nulo();
-    prueba_apilo_y_desapilo_x_elementos();
+    prueba_apilo_y_desapilo_x_elementos(CANT_ELEMENTOS);
     pruebo_desapilar_en_pila_vacia();
     pruebo_vet_topo_en_pila_vacia();
     pruebo_pila_creada_esta_vacia();
