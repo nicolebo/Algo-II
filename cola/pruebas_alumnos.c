@@ -1,6 +1,8 @@
 #include "cola.h"
 #include "testing.h"
 #include <stddef.h>
+#define CANT_ELEMENTOS 10000
+
 
 
 /* ******************************************************************
@@ -32,18 +34,26 @@ void prueba_desencolar()
     print_test("desencolar un elemento", cola_esta_vacia(cola));
     cola_destruir(cola, NULL);
 }
-void prueba_encolo_y_desencolo_x_elementos()
+void prueba_encolo_y_desencolo_x_elementos(int cantidad_elementos)
 {
-    int elementos = 100;
-    int variable = 87;
     cola_t* cola = cola_crear();
 
-    for (int i = 0; i < elementos; ++i) {
-        cola_encolar(cola, &variable);
-    }
-    print_test("se encolaron correctacmente?", !cola_esta_vacia(cola));
+    int array_posiciones[cantidad_elementos];
+    bool ok = true;
 
-    for (int j = 0; j < elementos; ++j) {
+    for (int i = 0; i < cantidad_elementos; ++i) {
+        array_posiciones[i] = i;
+    }
+
+    for (int i = 0; i < cantidad_elementos; ++i) {
+        ok = cola_encolar(cola, &array_posiciones[i]);
+    }
+
+    print_test("se apilaron correctacmente?", ok);
+
+    print_test("El primero es correcto?", cola_ver_primero(cola) == &array_posiciones[0]);
+
+    for (int j = 0; j < cantidad_elementos; ++j) {
         cola_desencolar(cola);
     }
     print_test("se desencolaron correctacmente?", cola_esta_vacia(cola));
@@ -96,7 +106,7 @@ void pruebas_cola_alumno() {
     prueba_crear_cola();
     prueba_encolar();
     prueba_desencolar();
-    prueba_encolo_y_desencolo_x_elementos();
+    prueba_encolo_y_desencolo_x_elementos(CANT_ELEMENTOS);
     prueba_encolo_elemento_nulo();
     pruebo_desencolar_en_cola_vacia();
     pruebo_ver_primer_elemento_en_cola_vacia();
