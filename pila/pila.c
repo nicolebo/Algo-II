@@ -1,6 +1,8 @@
 #include "pila.h"
 #include <stdlib.h>
 #define CAPACIDAD 4
+#define REDIMENSIONAR 2
+#define MINIMO_DE_REDIMENSIONAR 4
 
 /* Definición del struct pila proporcionado por la cátedra.
  */
@@ -56,7 +58,7 @@ bool pila_apilar(pila_t *pila, void* valor)
 {
     if (pila->capacidad == pila->cantidad)
     {
-        cambiar_dimension(pila, pila->capacidad * 2);
+        cambiar_dimension(pila, pila->capacidad * REDIMENSIONAR);
     }
     pila->datos[pila->cantidad] = valor;
     pila->cantidad += 1;
@@ -84,9 +86,9 @@ void* pila_ver_tope(const pila_t *pila)
 void* pila_desapilar(pila_t *pila)
 {
     if (pila_esta_vacia(pila)) return NULL;
-    if (pila->cantidad == pila->capacidad/4 && pila->capacidad/2 > CAPACIDAD)
+    if (pila->cantidad == pila->capacidad/MINIMO_DE_REDIMENSIONAR && pila->capacidad/REDIMENSIONAR > CAPACIDAD)
     {
-        cambiar_dimension(pila, pila->capacidad/2);
+        cambiar_dimension(pila, pila->capacidad/REDIMENSIONAR);
     }
     pila->cantidad -= 1;
     return pila->datos[pila->cantidad];
