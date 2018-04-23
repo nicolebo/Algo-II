@@ -105,7 +105,7 @@ bool lista_iter_al_final(const lista_iter_t *iter);
 void lista_iter_destruir(lista_iter_t *iter);
 
 
-// Inserta un elemento en la posicion actual del iterador, si no tiene elementos, devuelve false
+// Inserta un elemento en la posicion actual del iterador
 // Pre: el iterador de la lista fue creada.
 // Post: inserta un nuevo elemento en la posicion actual del iterador y devuelve el true en caso de exito
 bool lista_iter_insertar(lista_iter_t *iter, void *dato);
