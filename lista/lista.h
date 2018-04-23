@@ -11,8 +11,10 @@
 
 typedef struct lista lista_t;
 
+typedef struct lista_iter lista_iter_t;
+
 /* ******************************************************************
- *                    PRIMITIVAS DE LA COLA
+ *                    PRIMITIVAS DE LA LISTA
  * *****************************************************************/
 
 // Crea una lista.
@@ -61,5 +63,56 @@ size_t lista_largo(const lista_t *lista);
 // los datos de la lista, o NULL en caso de que no se la utilice.
 // Post: se eliminaron todos los elementos de la lista.
 void lista_destruir(lista_t *lista, void destruir_dato(void *));
+
+
+/* ******************************************************************
+ *                    PRIMITIVAS DEL ITERADOR INTERNO
+ * *****************************************************************/
+
+// Itera toda la lista de una.
+// Pre: la lista fue creada.
+// Post: Itera toda la lista o hasta que la funcion visitar lo detenga.
+void lista_iterar(lista_t *lista, bool visitar(void *dato, void *extra), void *extra);
+
+
+/* ******************************************************************
+ *                    PRIMITIVAS DEL ITERADOR EXTERNO
+ * *****************************************************************/
+
+// Crea un iterador de la lista.
+// Post: devuelve un nuevo iterador de la lista.
+lista_iter_t *lista_iter_crear(lista_t *lista);
+
+//Avanza a la siguiente nodo de la lista.
+// Pre: el iterador de la lista fue creada.
+// Post: Devuelve verdadero o falso, según si la lista avanza o o no un elemento enlistados.
+bool lista_iter_avanzar(lista_iter_t *iter);
+
+// Obtiene el valor del elemento actual del iterador de la lista. Si la lista tiene
+// un elemento, se devuelve el valor del actual, si está vacía devuelve NULL.
+// Pre: el iterador de la lista fue creada.
+// Post: se devolvió el elemento actual del iterador de la lista, cuando no está vacía.
+void *lista_iter_ver_actual(const lista_iter_t *iter);
+
+// Se fija si la el iterador esta en el final de la lista
+// Pre: el iterador de la lista fue creada.
+// Post: se devolvera true si el iterador esta al final de la lista, en caso contrario se devuelve false.
+bool lista_iter_al_final(const lista_iter_t *iter);
+
+// Destruye la lista.
+// Pre: la lista fue creada.
+// Post: se eliminaron todos los elementos de la lista.
+void lista_iter_destruir(lista_iter_t *iter);
+
+
+// Inserta un elemento en la posicion actual del iterador, si no tiene elementos, devuelve false
+// Pre: el iterador de la lista fue creada.
+// Post: inserta un nuevo elemento en la posicion actual del iterador y devuelve el true en caso de exito
+bool lista_iter_insertar(lista_iter_t *iter, void *dato);
+
+// Borra el elemento actual del iterador, si no tiene elementos, devuelve null
+// Pre: el iterador de la lista fue creada.
+// Post: Borra el elemento actual del iterador y devuelve el dato del elemento.
+void *lista_iter_borrar(lista_iter_t *iter);
 
 #endif // LISTA_H

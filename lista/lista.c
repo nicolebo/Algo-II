@@ -14,6 +14,13 @@ struct lista {
     size_t largo;
 };
 
+
+struct lista_iter {
+    nodo_t* actual;
+    nodo_t* anterior;
+    size_t largo;
+};
+
 lista_t* lista_crear(void) {
     lista_t* lista = malloc(sizeof(lista_t));
     if(lista == NULL) return NULL;
@@ -57,9 +64,6 @@ bool lista_insertar_ultimo(lista_t *lista, void *dato) {
     return true;
 }
 
-// borra el primer elemento de la lista y se devuelve su valor, si está vacía, devuelve NULL.
-// Pre: la lista fue creada.
-// Post: se devolvió el valor del elemento borrado de la lista
 void* lista_borrar_primero(lista_t *lista) {
     if (lista_esta_vacia(lista)) return NULL;
     void* dato = lista->primero->dato;
@@ -84,11 +88,6 @@ size_t lista_largo(const lista_t* lista) {
     return lista->largo;
 }
 
-// Destruye la lista. Si se recibe la función destruir_dato por parámetro,
-// para cada uno de los elementos de la lista llama a destruir_dato.
-// Pre: la lista fue creada. destruir_dato es una función capaz de destruir
-// los datos de la lista, o NULL en caso de que no se la utilice.
-// Post: se eliminaron todos los elementos de la lista.
 void lista_destruir(lista_t* lista, void destruir_dato(void*)) {
     while (!lista_esta_vacia(lista))
     {
@@ -101,4 +100,70 @@ void lista_destruir(lista_t* lista, void destruir_dato(void*)) {
         free(lista->primero);
         lista->primero = proximo;
     }
+}
+
+/* ******************************************************************
+ *                    ITERADOR
+ * *****************************************************************/
+
+
+void lista_iterar(lista_t *lista, bool visitar(void *dato, void *extra), void *extra) {
+    nodo_t* actual = lista->primero;
+    while(actual){
+        if(!visitar(actual->dato, extra)){
+            return;
+        }
+        actual = actual->siguiente;
+    }
+}
+
+lista_iter_t* lista_iter_crear(lista_t* lista) {
+    lista_iter_t* iterador = malloc(sizeof(lista_iter_t));
+    if(iterador == NULL) return NULL;
+    iterador->actual = lista->primero;
+    iterador->anterior = NULL;
+    iterador->largo = lista->largo;
+    return iterador;
+}
+
+bool lista_iter_avanzar(lista_iter_t* iter) {
+    if (iter->actual == NULL) return false;
+    iter->anterior = iter->actual;
+    iter->actual = iter->actual->siguiente;
+    return true;
+}
+
+void* lista_iter_ver_actual(const lista_iter_t* iter) {
+    if (iter->actual == NULL) return NULL;
+    return iter->actual->dato;
+}
+
+bool lista_iter_al_final(const lista_iter_t* iter) {
+    return(iter->actual == NULL);
+}
+
+void lista_iter_destruir(lista_iter_t* iter) {
+    free(iter);
+}
+
+bool lista_iter_insertar(lista_iter_t* iter, void* dato) {
+    if (iter->actual == NULL) return false;
+    nodo_t* nodo = malloc(sizeof(nodo_t));
+    if (nodo == NULL) return false;
+    nodo->dato = dato;
+    nodo->siguiente = iter->actual;
+    iter->actual =  nodo;
+    if (iter->anterior != NULL) iter->anterior->siguiente = iter->actual;
+    iter->largo += 1;
+    return true;
+}
+
+void* lista_iter_borrar(lista_iter_t* iter) {
+    if (iter->actual == NULL) return NULL;
+    void* dato = iter->actual->dato;
+    nodo_t* futuro_actual = iter->actual->siguiente;
+    if (iter->anterior != NULL) iter->anterior->siguiente = futuro_actual;
+    iter->actual = futuro_actual;
+    iter->largo -= 1;
+    return dato;
 }
