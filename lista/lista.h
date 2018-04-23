@@ -1,7 +1,9 @@
 #ifndef LISTA_H
 #define LISTA_H
 
+#include <stdlib.h>
 #include <stdbool.h>
+
 
 /* ******************************************************************
  *                DEFINICION DE LOS TIPOS DE DATOS
@@ -59,3 +61,5 @@ size_t lista_largo(const lista_t *lista);
 // los datos de la lista, o NULL en caso de que no se la utilice.
 // Post: se eliminaron todos los elementos de la lista.
 void lista_destruir(lista_t *lista, void destruir_dato(void *));
+
+#endif // LISTA_H

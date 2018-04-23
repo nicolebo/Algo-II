@@ -14,12 +14,13 @@ struct lista {
     size_t largo;
 };
 
-lista_t *lista_crear(void) {
-    lista_t lista = malloc(sizeof(lista_t));
+lista_t* lista_crear(void) {
+    lista_t* lista = malloc(sizeof(lista_t));
     if(lista == NULL) return NULL;
     lista->primero = NULL;
     lista->ultimo = NULL;
-    lista.largo = 0;
+    lista->largo = 0;
+    return lista;
 }
 
 bool lista_esta_vacia(const lista_t *lista) {
@@ -27,7 +28,7 @@ bool lista_esta_vacia(const lista_t *lista) {
 }
 
 bool lista_insertar_primero(lista_t *lista, void *dato) {
-    nodo_t nodo = malloc(sizeof(nodo_t));
+    nodo_t* nodo = malloc(sizeof(nodo_t));
     if (nodo == NULL) return false;
     nodo->dato = dato;
     if(lista_esta_vacia(lista)) {
@@ -42,7 +43,7 @@ bool lista_insertar_primero(lista_t *lista, void *dato) {
 }
 
 bool lista_insertar_ultimo(lista_t *lista, void *dato) {
-    nodo_t nodo = malloc(sizeof(nodo_t));
+    nodo_t* nodo = malloc(sizeof(nodo_t));
     if (nodo == NULL) return false;
     nodo->dato = dato;
     nodo->siguiente = NULL;
@@ -59,27 +60,27 @@ bool lista_insertar_ultimo(lista_t *lista, void *dato) {
 // borra el primer elemento de la lista y se devuelve su valor, si está vacía, devuelve NULL.
 // Pre: la lista fue creada.
 // Post: se devolvió el valor del elemento borrado de la lista
-void *lista_borrar_primero(lista_t *lista) {
+void* lista_borrar_primero(lista_t *lista) {
     if (lista_esta_vacia(lista)) return NULL;
     void* dato = lista->primero->dato;
-    nodo_t proximo_primero = lista->primero->siguiente;
+    nodo_t* proximo_primero = lista->primero->siguiente;
     free(lista->primero);
     lista->primero = proximo_primero;
     lista->largo -= 1;
     return dato;
 }
 
-void *lista_ver_primero(const lista_t *lista) {
+void* lista_ver_primero(const lista_t* lista) {
     if (lista_esta_vacia(lista)) return NULL;
     return lista->primero->dato;
 }
 
-void *lista_ver_ultimo(const lista_t* lista) {
+void* lista_ver_ultimo(const lista_t* lista) {
     if (lista_esta_vacia(lista)) return NULL;
     return lista->ultimo->dato;
 }
 
-size_t lista_largo(const lista_t *lista) {
+size_t lista_largo(const lista_t* lista) {
     return lista->largo;
 }
 
@@ -88,4 +89,16 @@ size_t lista_largo(const lista_t *lista) {
 // Pre: la lista fue creada. destruir_dato es una función capaz de destruir
 // los datos de la lista, o NULL en caso de que no se la utilice.
 // Post: se eliminaron todos los elementos de la lista.
-void lista_destruir(lista_t *lista, void destruir_dato(void *));
+void lista_destruir(lista_t* lista, void destruir_dato(void*)) {
+    while (!lista_esta_vacia(lista))
+    {
+        void* dato = lista->primero->dato;
+        if(destruir_dato != NULL)
+        {
+            destruir_dato(dato);
+        }
+        nodo_t* proximo = lista->primero->siguiente;
+        free(lista->primero);
+        lista->primero = proximo;
+    }
+}
