@@ -109,6 +109,7 @@ void lista_destruir(lista_t* lista, void destruir_dato(void*)) {
 
 
 void lista_iterar(lista_t *lista, bool visitar(void *dato, void *extra), void *extra) {
+    if(lista_esta_vacia(lista)) return;
     nodo_t* actual = lista->primero;
     while(actual){
         if(!visitar(actual->dato, extra)){
