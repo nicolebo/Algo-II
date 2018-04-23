@@ -148,7 +148,6 @@ void lista_iter_destruir(lista_iter_t* iter) {
 }
 
 bool lista_iter_insertar(lista_iter_t* iter, void* dato) {
-
     if (iter== NULL) return false;
     nodo_t* nodo = malloc(sizeof(nodo_t));
     if (nodo == NULL) return false;
