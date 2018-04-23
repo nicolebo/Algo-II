@@ -58,7 +58,7 @@ bool pila_apilar(pila_t *pila, void* valor)
 {
     if (pila->capacidad == pila->cantidad)
     {
-        cambiar_dimension(pila, pila->capacidad * REDIMENSIONAR);
+        if (!cambiar_dimension(pila, pila->capacidad * REDIMENSIONAR)) return false;
     }
     pila->datos[pila->cantidad] = valor;
     pila->cantidad += 1;
