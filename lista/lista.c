@@ -177,19 +177,18 @@ bool lista_iter_insertar(lista_iter_t* iter, void* dato) {
 void* lista_iter_borrar(lista_iter_t* iter) {
     if (iter->actual == NULL) return NULL;
     void* dato = iter->actual->dato;
+    nodo_t* aux = iter->actual;
     nodo_t* proximo_actual = iter->actual->siguiente;
-
     if (iter->anterior == NULL) {
         iter->lista->primero = proximo_actual;
     } else if (proximo_actual == NULL) {
         iter->anterior->siguiente = NULL;
         iter->lista->ultimo = iter->anterior;
-        proximo_actual = iter->anterior;
     } else {
         iter->anterior->siguiente = proximo_actual;
     }
-    free(iter->actual);
     iter->actual = proximo_actual;
+    free(aux);
     iter->lista->largo -= 1;
     return dato;
 }
