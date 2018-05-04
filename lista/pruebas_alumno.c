@@ -210,6 +210,34 @@ void prueba_remover_elemento_iterador_creado(int variable) {
     lista_iter_destruir(iter);
     lista_destruir(lista, NULL);
 }
+
+void prueba_volumen_iterador_externo(int variable) {
+    lista_t* lista = lista_crear();
+    bool ok = true;
+    lista_iter_t* iter = lista_iter_crear(lista);
+    for (int i = 0; i < variable; ++i) {
+        ok = lista_iter_insertar(iter, &variable);
+        print_test("se enlisto correctacmente?", ok);
+        print_test("se inserto un elemento en el actual del iterador y de la lista", lista_iter_ver_actual(iter) == &variable);
+    }
+    lista_iter_destruir(iter);
+
+    lista_iter_t* iter1 = lista_iter_crear(lista);
+
+    for (int i = 0; i < variable; ++i) {
+        ok = lista_iter_avanzar(iter1);
+        print_test("se enlisto correctacmente?", ok);
+    }
+
+    lista_iter_destruir(iter1);
+
+    lista_iter_t* iter2 = lista_iter_crear(lista);
+
+    while (lista_iter_ver_actual(iter2) != NULL) {
+        print_test("se borro el elemento actual y su dato es", lista_iter_borrar(iter2));
+    }
+    lista_iter_destruir(iter2);
+}
 void pruebas_lista_alumno() {
     prueba_crear_lista();
     prueba_inserto_primero_lista(VARIABLE);
@@ -226,4 +254,5 @@ void pruebas_lista_alumno() {
     prueba_inserto_elemento_al_final_con_iterador(VARIABLE);
     prueba_inserto_elemento_en_medio_con_iterador(VARIABLE);
     prueba_remover_elemento_iterador_creado(VARIABLE);
+    prueba_volumen_iterador_externo(VARIABLE);
 }
