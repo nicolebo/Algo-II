@@ -175,12 +175,12 @@ void* lista_iter_borrar(lista_iter_t* iter) {
     if (iter->anterior == NULL) {
         iter->lista->primero = iter->actual->siguiente;
     }
-    else if (iter->actual->siguiente == NULL) {
-        iter->anterior->siguiente = NULL;
-        iter->lista->ultimo = iter->anterior;
-    }
     else {
         iter->anterior->siguiente = iter->actual->siguiente;
+    }
+
+    if (iter->actual->siguiente == NULL) {
+        iter->lista->ultimo = iter->anterior;
     }
 
     iter->actual = iter->actual->siguiente;
