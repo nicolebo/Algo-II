@@ -237,6 +237,8 @@ void prueba_volumen_iterador_externo(int variable) {
         print_test("se borro el elemento actual y su dato es", lista_iter_borrar(iter2));
     }
     lista_iter_destruir(iter2);
+    lista_destruir(lista, NULL);
+
 }
 void pruebas_lista_alumno() {
     prueba_crear_lista();
