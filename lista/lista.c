@@ -113,7 +113,6 @@ nodo_t* crear_nodo(void *dato) {
 
 
 void lista_iterar(lista_t *lista, bool visitar(void *dato, void *extra), void *extra) {
-    if(visitar != NULL) return;
     nodo_t* actual = lista->primero;
     while(actual && visitar(actual->dato, extra)) actual = actual->siguiente;
 }
