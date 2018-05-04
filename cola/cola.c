@@ -13,6 +13,8 @@ struct cola {
     nodo_t* ultimo;
 };
 
+nodo_t* crear_nodo(void *dato);
+
 // Crea una cola.
 // Post: devuelve una nueva cola vacía.
 cola_t* cola_crear(void) {
@@ -50,10 +52,7 @@ bool cola_esta_vacia(const cola_t *cola){
 // Post: se agregó un nuevo elemento a la cola, valor se encuentra al final
 // de la cola.
 bool cola_encolar(cola_t *cola, void* valor){
-    nodo_t* nuevo_nodo = malloc(sizeof(nodo_t));
-    if(nuevo_nodo == NULL) return false;
-    nuevo_nodo->dato = valor;
-    nuevo_nodo->siguiente = NULL;
+    nodo_t* nuevo_nodo = crear_nodo(valor);
     if (cola_esta_vacia(cola)) {
         cola->primero = nuevo_nodo;
     } else {
@@ -85,4 +84,12 @@ void* cola_desencolar(cola_t *cola){
     free(viejo_primero);
 
     return dato;
+}
+
+nodo_t* crear_nodo(void *dato) {
+    nodo_t* nodo = malloc(sizeof(nodo_t));
+    if (nodo == NULL) return NULL;
+    nodo->siguiente = NULL;
+    nodo->dato = dato;
+    return nodo;
 }
