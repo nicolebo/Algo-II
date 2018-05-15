@@ -10,9 +10,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d652251-8d49-488d-91fb-c422982a2c81" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/TP1/diff.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TP1/nombres2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TP1/script.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TP1/syntax_validation.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cola/pruebas" beforeDir="false" afterPath="$PROJECT_DIR$/cola/pruebas" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lista/lista.c" beforeDir="false" afterPath="$PROJECT_DIR$/lista/lista.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TP1/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/TP1/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TP1/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TP1/pruebas" beforeDir="false" afterPath="$PROJECT_DIR$/TP1/pruebas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TP1/pruebas_alumno.c" beforeDir="false" afterPath="$PROJECT_DIR$/TP1/pruebas_alumno.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TP1/strutil.c" beforeDir="false" afterPath="$PROJECT_DIR$/TP1/strutil.c" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,11 +31,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="lista.c" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lista/lista.c">
+      <file leaf-file-name="syntax_validation.c" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TP1/syntax_validation.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="614">
-              <caret line="111" column="39" lean-forward="true" selection-start-line="111" selection-start-column="39" selection-end-line="111" selection-end-column="39" />
+            <state relative-caret-position="323">
+              <caret line="23" column="21" lean-forward="true" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tail.c" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/TP1/tail.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="399">
+              <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="diff.c" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TP1/diff.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-start-column="2" selection-end-line="64" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Makefile" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TP1/Makefile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="95">
+              <caret line="5" column="92" selection-start-line="5" selection-start-column="92" selection-end-line="5" selection-end-column="92" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="strutil.c" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TP1/strutil.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-start-column="2" selection-end-line="86" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -49,10 +92,26 @@
       <find>lista_iter</find>
       <find>futur</find>
       <find>destruir</find>
-      <find>iterador</find>
       <find>lista_iter_al</find>
       <find>proximo</find>
+      <find>lista_iterar</find>
+      <find>lista_destruir</find>
+      <find>lista_borrar</find>
+      <find>lista_des</find>
+      <find>lista_borrar_primero</find>
+      <find>lista_iter_in</find>
+      <find>lista_iter_destruir(</find>
+      <find>lista_iter_avanzar</find>
+      <find>nodo</find>
+      <find>iterador</find>
+      <find>cola_destruir</find>
+      <find>strutil</find>
+      <find>main</find>
+      <find>void</find>
     </findStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/TP1</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -60,15 +119,28 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/cola/cola.c" />
         <option value="$PROJECT_DIR$/pila/pruebas_alumno.c" />
         <option value="$PROJECT_DIR$/cola/pruebas_alumnos.c" />
-        <option value="$PROJECT_DIR$/lista/ejemplo_iteradores.c" />
         <option value="$PROJECT_DIR$/lista/main.c" />
         <option value="$PROJECT_DIR$/lista/lista.h" />
-        <option value="$PROJECT_DIR$/lista/pruebas_alumno.c" />
         <option value="$PROJECT_DIR$/pila/pila.c" />
+        <option value="$PROJECT_DIR$/lista/ejemplo_iteradores.c" />
+        <option value="$PROJECT_DIR$/cola/cola.c" />
+        <option value="$PROJECT_DIR$/lista/pruebas_alumno.c" />
         <option value="$PROJECT_DIR$/lista/lista.c" />
+        <option value="$PROJECT_DIR$/TP1/normal.txt" />
+        <option value="$PROJECT_DIR$/TP1/normal1.txt" />
+        <option value="$PROJECT_DIR$/TP1/nombres3txt" />
+        <option value="$PROJECT_DIR$/TP1/cola.h" />
+        <option value="$PROJECT_DIR$/TP1/cola.c" />
+        <option value="$PROJECT_DIR$/TP1/syntax_val.c" />
+        <option value="$PROJECT_DIR$/TP1/syntax_vala.c" />
+        <option value="$PROJECT_DIR$/TP1/script.txt" />
+        <option value="$PROJECT_DIR$/TP1/strutil.c" />
+        <option value="$PROJECT_DIR$/TP1/Makefile" />
+        <option value="$PROJECT_DIR$/TP1/syntax_validation.c" />
+        <option value="$PROJECT_DIR$/TP1/diff.c" />
+        <option value="$PROJECT_DIR$/TP1/tail.c" />
       </list>
     </option>
   </component>
@@ -80,8 +152,9 @@
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="width" value="1392" />
-    <option name="height" value="996" />
+    <option name="x" value="-1" />
+    <option name="width" value="1922" />
+    <option name="height" value="526" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -98,7 +171,7 @@
             <path>
               <item name="Algo-II" type="b2602c69:ProjectViewProjectNode" />
               <item name="Algo-II" type="462c0819:PsiDirectoryNode" />
-              <item name="pila" type="462c0819:PsiDirectoryNode" />
+              <item name="TP1" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -115,6 +188,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/TP1" />
       <recent name="$PROJECT_DIR$/lista" />
     </key>
   </component>
@@ -154,18 +228,30 @@
       <workItem from="1524408100056" duration="3957000" />
       <workItem from="1524431344273" duration="3192000" />
       <workItem from="1524448716444" duration="20847000" />
-      <workItem from="1524506514833" duration="665000" />
+      <workItem from="1524506514833" duration="1330000" />
+      <workItem from="1524578630450" duration="2525000" />
+      <workItem from="1524694532121" duration="2233000" />
+      <workItem from="1524838162307" duration="1271000" />
+      <workItem from="1525103526036" duration="2977000" />
+      <workItem from="1525222885490" duration="2768000" />
+      <workItem from="1525354855483" duration="14273000" />
+      <workItem from="1525965767968" duration="178000" />
+      <workItem from="1525968681692" duration="16462000" />
+      <workItem from="1525999749269" duration="11627000" />
+      <workItem from="1526088168809" duration="14100000" />
+      <workItem from="1526106294910" duration="876000" />
+      <workItem from="1526107484146" duration="613000" />
+      <workItem from="1526108270422" duration="304000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52855000" />
+    <option name="totallyTimeSpent" value="123727000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1922" height="1053" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18072917" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20364584" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="CMake" order="10" weight="0.3094737" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
@@ -186,19 +272,19 @@
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18072917" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32947367" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32947367" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="CMake" order="10" weight="0.3094737" />
       <window_info id="Favorites" order="2" side_tool="true" />
     </layout-to-restore>
@@ -221,28 +307,28 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="4" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lista/lista.c">
+    <entry file="file://$PROJECT_DIR$/TP1/diff.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="20" column="19" lean-forward="true" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+        <state>
+          <caret lean-forward="true" selection-start-column="2" selection-end-line="64" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lista/pruebas_alumno.c">
+    <entry file="file://$PROJECT_DIR$/TP1/strutil.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4028">
-          <caret line="212" column="1" selection-start-line="212" selection-start-column="1" selection-end-line="212" selection-end-column="1" />
+        <state relative-caret-position="1634">
+          <caret line="86" column="1" selection-start-line="86" selection-start-column="1" selection-end-line="86" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lista/lista.c">
+    <entry file="file://$PROJECT_DIR$/TP1/syntax_validation.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1710">
-          <caret line="90" column="64" lean-forward="true" selection-start-line="90" selection-start-column="64" selection-end-line="90" selection-end-column="64" />
+        <state relative-caret-position="855">
+          <caret line="45" column="17" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -407,31 +493,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vd/vector_dinamico.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vd/vector_dinamico.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="767">
           <caret line="53" column="27" lean-forward="true" selection-start-line="53" selection-end-line="53" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lista/main.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lista/ejemplo_iteradores.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="862">
-          <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
         </state>
       </provider>
     </entry>
@@ -442,52 +507,158 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/TP1/main.c" />
+    <entry file="file://$PROJECT_DIR$/vd/vector_dinamico.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/cola/cola.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="28" selection-end-column="54" />
+        <state relative-caret-position="216">
+          <caret line="29" column="18" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cola/cola.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="30" column="28" lean-forward="true" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cola/pruebas_alumnos.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="35" column="1" lean-forward="true" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lista/lista.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="21" column="8" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+        <state relative-caret-position="450">
+          <caret line="38" column="9" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pila/pila.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="657">
-          <caret line="75" column="43" lean-forward="true" selection-start-line="75" selection-start-column="43" selection-end-line="75" selection-end-column="43" />
+        <state relative-caret-position="-174">
+          <caret line="31" column="6" lean-forward="true" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lista/pruebas_alumno.c">
+    <entry file="file://$PROJECT_DIR$/TP0/tp0.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="212" column="1" selection-start-line="212" selection-start-column="1" selection-end-line="212" selection-end-column="1" />
+        <state relative-caret-position="862">
+          <caret line="50" column="15" lean-forward="true" selection-start-line="50" selection-start-column="15" selection-end-line="50" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TP1/nombres3.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TP1/nombres2.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lista/lista.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="614">
-          <caret line="111" column="39" lean-forward="true" selection-start-line="111" selection-start-column="39" selection-end-line="111" selection-end-column="39" />
+        <state relative-caret-position="2394">
+          <caret line="126" column="1" lean-forward="true" selection-start-line="126" selection-start-column="1" selection-end-line="126" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lista/lista.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="637">
+          <caret line="88" column="23" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cola/pruebas_alumnos.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" selection-start-line="13" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TP1/cola.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="66" column="27" lean-forward="true" selection-start-line="66" selection-start-column="27" selection-end-line="66" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TP1/cola.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="47" column="27" lean-forward="true" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TP1/syntax_validation.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" selection-end-line="41" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TP1/nombres1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lista/main.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lista/pruebas_alumno.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4902">
+          <caret line="258" selection-start-line="258" selection-end-line="258" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TP1/script.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TP1/strutil.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-start-column="2" selection-end-line="86" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TP1/Makefile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="92" selection-start-line="5" selection-start-column="92" selection-end-line="5" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TP1/diff.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-start-column="2" selection-end-line="64" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TP1/syntax_validation.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="23" column="21" lean-forward="true" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TP1/tail.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
         </state>
       </provider>
     </entry>

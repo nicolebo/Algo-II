@@ -1,21 +1,12 @@
-EXEC	=	pruebas
-OBJFILES	=	*.c
-
 CC = gcc
 CFLAGS = -g -std=c99 -Wall -Wconversion -Wno-sign-conversion -Werror
 VFLAGS = --leak-check=full --track-origins=yes --show-reachable=yes
 
+build: tail.c cola.c cola.h testing.c syntax_validation.c pila.h pila.c diff.c
+	$(CC) $(CFLAGS) tail.c cola.c cola.h testing.c syntax_validation.c pila.h pila.c diff.c -o pruebas
 
-all: $(EXEC)
+run: build
+	./pruebas
 
-run: all
-	./$(EXEC)
-
-valgrind: 
-	valgrind $(VFLAGS) ./$(EXEC)
-
-$(EXEC): $(OBJFILES)
-	$(CC) $(CFLAGS) -o $(EXEC) $(OBJFILES)
-
-%.o: %.c %.h
-	$(CC) $(CFLAGS) -c $<
+valgrind: build
+	valgrind $(VFLAGS) ./pruebas
