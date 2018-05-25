@@ -11,28 +11,25 @@ char** split(const char* str, char sep) {
    size_t contador_palabras = 1;
    int largo = 0;
    while(str[largo] != '\0') {
-   	if(sep == str[largo]) contador_palabras += 1;
-   	largo += 1;
+	if(sep == str[largo]) contador_palabras += 1;
+	largo += 1;
    }
-	char** arreglo = malloc(sizeof(char*) * contador_palabras);
-   if (arreglo == NULL) return NULL;
 
-	size_t posicion_separador_anterior = 0;
-	size_t palabras_agregadas = 0;
-	size_t posicion = 0;
-	while(posicion < largo) {
-		if(sep == str[posicion]) {
-			char* palabra = armar_palabra(str, posicion_separador_anterior, posicion);
-			arreglo[palabras_agregadas] = palabra;
-			palabras_agregadas += 1;
-			posicion_separador_anterior = posicion + 1;
-		}
-		posicion += 1;
-		if(posicion == largo){
-			char* palabra = armar_palabra(str, posicion_separador_anterior, posicion);
-			arreglo[palabras_agregadas] = palabra;
-			palabras_agregadas += 1;
-		}
+   char** arreglo = malloc(sizeof(char*) * contador_palabras);
+
+   if (arreglo == NULL) return NULL;
+   size_t posicion_separador_anterior = 0;
+   size_t palabras_agregadas = 0;
+   size_t posicion = 0;
+
+   while(posicion <= largo) {
+	if(sep == str[posicion] || posicion == largo) {
+		char* palabra = armar_palabra(str, posicion_separador_anterior, posicion);
+		arreglo[palabras_agregadas] = palabra;
+		palabras_agregadas += 1;
+		posicion_separador_anterior = posicion + 1;
+	}
+	posicion += 1;
    }
    arreglo[palabras_agregadas] = NULL;
    return arreglo;
@@ -52,27 +49,33 @@ char* armar_palabra(const char* texto, size_t inicio, size_t fin) {
 
 char* join(char** strv, char sep) {
 	if(sep == '\0') return NULL;
-   int cant_palabras = 0;
-   int largo_total = 0;
-   while(strv[cant_palabras] != NULL) {
-   	while(strv[cant_palabras][largo_total] != '\0') largo_total += 1;
-   	cant_palabras += 1;
-   }
-	int total = cant_palabras + largo_total;
-	char* cadena = malloc(sizeof(char) * (total));
+   	int cant_palabras = 0;
+	int largo_total = 0;
+
+   	while(strv[cant_palabras] != NULL) {
+		int largo = 0;
+		while(strv[cant_palabras][largo] != '\0'){
+			largo += 1;
+   			largo_total += 1;
+		}
+   		cant_palabras += 1;
+   	}
+
+   	char* cadena = malloc(sizeof(char) * (cant_palabras + largo_total));
 	int i = 0;
-	int posiciones_nueva_cadena = 0;
-   while(strv[i] != NULL) {
-   	int j = 0;
-   	while(strv[i][j] != '\0') {
-			cadena[posiciones_nueva_cadena] = strv[i][j];
-   		posiciones_nueva_cadena += 1;
+	int posicion_cadena = 0;
+
+   	while(strv[i] != NULL) {
+		int j = 0;
+		while(strv[i][j] != '\0') {
+			cadena[posicion_cadena] = strv[i][j];
+			posicion_cadena += 1;
 			j += 1;
-   	}
-   	if (posiciones_nueva_cadena < total) {
-   		cadena[posiciones_nueva_cadena] = sep;
-   		posiciones_nueva_cadena +=1;
-   	}
+		}
+		if (posicion_cadena <= largo_total) {
+			cadena[posicion_cadena] = sep;
+			posicion_cadena += 1;
+		}
 		i += 1;
    }
    return cadena;
