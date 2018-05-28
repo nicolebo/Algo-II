@@ -47,14 +47,14 @@ int main(int argc, char *argv[]){
     while (leidos1 != -1 || leidos2 != -1) {
 
         if(leidos1 != -1 && leidos2 == -1) {
-            fprintf(stdout, "Diferencia en linea %d \n < %s \n --- \n >", contador_lineas + 1, linea1);
+            fprintf(stdout, "Diferencia en linea %d \n < %s \n --- \n > \n", contador_lineas + 1, linea1);
 
         } else if (leidos1 == -1 && leidos2 != -1) {
             fprintf(stdout, "Diferencia en linea %d \n < \n --- \n > %s", contador_lineas + 1, linea2);
 
         } else {
             int iguales = comparar(linea1, linea2);
-            if (iguales == 0) fprintf(stdout, " Diferencia en linea %d \n < %s \n --- \n > %s \n", contador_lineas + 1, linea1, linea2);
+            if (iguales == 0) fprintf(stdout, " Diferencia en linea %d \n < %s --- \n > %s \n", contador_lineas + 1, linea1, linea2);
         }
         contador_lineas += 1;
         leidos1 = getline(&linea1, &capacidad1, primer_archivo);
