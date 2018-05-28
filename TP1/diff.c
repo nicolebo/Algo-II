@@ -25,7 +25,7 @@ int comparar(char* linea1, char* linea2) {
 
 int main(int argc, char *argv[]){
     if (argc != 3){
-        fprintf(stderr, " Error, se ha ingresado mal la cantidad de parametros que recibe la funcion diff, requiere dos nombres de archivos \n");
+        fprintf(stderr, "Cantidad de parametros erronea \n");
         return 0;
     }
     char* linea1 = NULL;
@@ -36,7 +36,7 @@ int main(int argc, char *argv[]){
     FILE* segundo_archivo = abrir_archivo(argv[2]);
 
     if (primer_archivo == NULL || segundo_archivo == NULL){
-        fprintf(stderr, "Error, revice el nombre de los archivos");
+        fprintf(stderr, "Archivo erroneo");
         return 0;
     }
 
@@ -47,12 +47,14 @@ int main(int argc, char *argv[]){
     while (leidos1 != -1 || leidos2 != -1) {
 
         if(leidos1 != -1 && leidos2 == -1) {
-            fprintf(stdout, "Diferencia en linea %d, %s | %s", contador_lineas, linea1, "");
+            fprintf(stdout, "Diferencia en linea %d \n < %s \n --- \n >", contador_lineas + 1, linea1);
+
         } else if (leidos1 == -1 && leidos2 != -1) {
-            fprintf(stdout, "Diferencia en linea %d, %s | %s", contador_lineas, "", linea2);
+            fprintf(stdout, "Diferencia en linea %d \n < \n --- \n > %s", contador_lineas + 1, linea2);
+
         } else {
             int iguales = comparar(linea1, linea2);
-            if (iguales == 0) fprintf(stdout, " Diferencia en linea %d, %s | %s", contador_lineas, linea1, linea2);
+            if (iguales == 0) fprintf(stdout, " Diferencia en linea %d \n < %s \n --- \n > %s \n", contador_lineas + 1, linea1, linea2);
         }
         contador_lineas += 1;
         leidos1 = getline(&linea1, &capacidad1, primer_archivo);
